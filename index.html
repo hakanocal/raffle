@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="container bg_grey ">
+    <div class="container bg_grey" style="min-height: calc(100vh - 61px);">
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
                 <div>Drop your .txt or .csv files here</div>
@@ -29,19 +29,20 @@
                 <textarea name="insItems" id="insertedItemsArea" class="textarea"  rows="20" spellcheck="false"></textarea>
                 <div id="insItemsSub" class="mt_1">
                     <span class="button danger" id="clear">TEMİZLE</span>
-                    <span id="drawWinnerText">0 katılımcı arasından <input type="number" id="winnerCount"> kazanan çek</span>
+                    <span id="drawWinnerText"> <span id="itemCount">10</span> katılımcı arasından <input type="text" id="winnerCount"> kazanan <div class="button success" style="margin-top: -4px;">ÇEK</div></span>
                 </div>
             </div>
             <div id="winnersWrapper">
                 <div>Winners</div>
                 <textarea name="winners" id="insertedItemsArea"   class="textarea"  rows="20" spellcheck="false" disabled></textarea>
-                <div id="winnersSub">
-                    <div class="button danger mt_1" id="clear">TEMİZLE</div>
+                <div id="winnersSub" class="mt_1">
+                    <span class="button danger" id="clear">TEMİZLE</span>
+                    
+                    <span id="drawWinnerText"><div class="button success" style="margin-top: -4px;">DRAW</div> <input type="text" id="winnerCount"> winner from <span id="itemCount">10</span> participants </span>
+                    
                 </div>
             </div>
         </div>
-
-        
     </div>
 
     <script src="script.js" type="text/javascript"></script>
