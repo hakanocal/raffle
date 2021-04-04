@@ -1,0 +1,1 @@
+document.getElementById("insertedItemsArea").placeholder = "Donald Trump\nAngela Merkel\nVladimir Putin\nRecep Tayyip Erdoğan\nEmmanuel Macron\nNicolás Maduro\nPapa Franciscus\nBeşşar Esad\nKim Jong-un\nBenyamin Netanyahu\nRam Nath Kovind\nBoris Johnson";
