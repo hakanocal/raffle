@@ -79,6 +79,7 @@ body{
 }
 .bg_grey{
     background-color: #F0F2F5;
+
 }
 /* margin */
 .m_0{
@@ -188,6 +189,10 @@ body{
     border:1px solid grey;
     border-radius: 3px;
 }
+.disabled{
+    background-color: rgb(226, 226, 226);
+
+}
 .textarea:focus{
     border:1px solid black;
 }
@@ -253,10 +258,30 @@ input[type=number] {
     }
     #insertedItemsArea{
         height: 225px;
+        background-color: red;
     }
 }
+#socialMedia{
+    float:right;
+}
+#githubLogo{
+    fill:#004292;
+    margin-right: 10px;
+}
+#githubLogo:hover{
+    fill:black;
+    margin-right: 10px;
+}
+#githubLogo svg{
+    margin-right: -5px;
+}
 
-
+#linkedinLogo{
+    fill:#004292;
+}
+#linkedinLogo:hover{
+    fill:black;
+}
 
 
 
