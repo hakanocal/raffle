@@ -9,11 +9,10 @@ body{
     width: 100%;
     background-color: #1473E6;
 }
-#header{
+#header span{
     padding-left: 0px;
     color: #fff;
     font-weight: 600;
-
 }
 
 .container{
@@ -177,10 +176,12 @@ body{
     font-weight:900;
 }
 .larger{
-    font-size:larger;
+    font-size: larger;
 }
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
+#drawWinnerText *{
+    margin-left: 3px;
+}
 .textarea{
     width:calc(100% - 12px); 
     resize:none;
@@ -220,6 +221,7 @@ body{
     padding: 3px;
     border-radius: 3px;
     text-align: center;
+    margin-top: -1px;
 }  
 /* disable number arrow*/
 /* Chrome, Safari, Edge, Opera */

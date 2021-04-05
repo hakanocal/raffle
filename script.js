@@ -2,31 +2,56 @@ document.getElementById("insertedItemsArea").placeholder = "Donald Trump\nAngela
 document.getElementById("winnerCount").innerHTML = "1"
 
 
+function langTR(){
+    document.getElementById("drawbuttontext").style.order = "5";
+    document.getElementById("winnerCount").style.order = "3";
+    document.getElementById("winnerfromtext").style.order = "4";
+    document.getElementById("itemCount").style.order = "1";
+    document.getElementById("participantstext").style.order = "2";
 
-var wordArray = []
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                var n = allText.split("\n");
-                for(var x in n){   
-                    wordArray.push((n[x].trim()));
-                }
-            }
-        }
-    }
-    rawFile.send(null);
+    document.getElementById("drawbuttontext").innerHTML = "ÇEK";
+    document.getElementById("winnerfromtext").innerHTML = "kazanan";
+    document.getElementById("itemCount").innerHTML = "0";
+    document.getElementById("participantstext").innerHTML = "katılımcı arasından";
+
+    document.getElementById("clearItems").innerHTML = "TEMİZLE";
+    document.getElementById("clearWinners").innerHTML = "TEMİZLE";
+    document.getElementById("enterSeperatedNames").innerHTML = "İsimleri satırlar ile ayırarak girin:";
+    document.getElementById("winners").innerHTML = "Kazananlar:";
+    document.getElementById("headerTitle").innerHTML = "YENİ BİR ÇEKİLİŞ OLUŞTUR!";
+    document.getElementById("dropyourfile").innerHTML = ".txt veya .csv formatlı dosyaları sürükle ve bırak";
 }
-readTextFile("wordninja_words.txt");
+function langEN(){
+    document.getElementById("drawbuttontext").style.order = "1";
+    document.getElementById("winnerCount").style.order = "2";
+    document.getElementById("winnerfromtext").style.order = "3";
+    document.getElementById("itemCount").style.order = "4";
+    document.getElementById("participantstext").style.order = "5";
 
+    document.getElementById("drawbuttontext").innerHTML = "DRAW";
+    document.getElementById("winnerfromtext").innerHTML = "winner from";
+    document.getElementById("itemCount").innerHTML = "0";
+    document.getElementById("participantstext").innerHTML = "participants";
 
+    document.getElementById("drawbuttontext").innerHTML = "DRAW";
+    document.getElementById("winnerfromtext").innerHTML = "winner from";
+    document.getElementById("itemCount").innerHTML = "0";
+    document.getElementById("participantstext").innerHTML = "participants";
+
+    document.getElementById("clearItems").innerHTML = "CLEAR";
+    document.getElementById("clearWinners").innerHTML = "CLEAR";
+    document.getElementById("enterSeperatedNames").innerHTML = "Enter names separated by newlines:";
+    document.getElementById("winners").innerHTML = "Winners";
+    document.getElementById("headerTitle").innerHTML = "CREATE NEW RAFFLE NOW!";
+    document.getElementById("dropyourfile").innerHTML = "Drop your .txt or .csv files here";
+}
+var userLang = navigator.language || navigator.userLanguage; 
+if (userLang == "tr-TR" || userLang == "tr"){
+    langTR();
+}
+else{
+    langEN();
+}
 function loadFileAsText(){
     var fileToLoad = document.getElementById("fileToLoad").files[0];
   
