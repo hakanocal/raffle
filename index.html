@@ -35,7 +35,7 @@
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
                 <div>Drop your .txt or .csv files here</div>
-                <div class="button normal">SELECT FILE</div>
+                <input type="file" accept=".txt, .csv" class="button normal" id="fileToLoad" onchange="loadFileAsText()">
             </div>
         </div>
         <div class="mt_4" id="insertedItemsAndWinners">
@@ -44,7 +44,7 @@
                 <textarea name="insItems" id="insertedItemsArea" class="textarea"  rows="20" spellcheck="false"></textarea>
                 <div id="insItemsSub" class="mt_1">
                     <span class="button danger" id="clear">TEMİZLE</span>
-                    <span id="drawWinnerText"> <span id="itemCount" class="bolder3 larger">10</span> katılımcı arasından <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" id="winnerCount" maxlength="3" spellcheck="false" autocomplete="off" title="en fazla 3 basamaklı sayılar kabul edilir"> kazanan <div class="button success" style="margin-top: -4px;">ÇEK</div></span>
+                    <span id="drawWinnerText"> <span id="itemCount" class="bolder3 larger">0</span> katılımcı arasından <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" id="winnerCount" maxlength="3" spellcheck="false" autocomplete="off" title="en fazla 3 basamaklı sayılar kabul edilir"> kazanan <div class="button success" style="margin-top: -4px;">ÇEK</div></span>
                 </div>
             </div>
             <div id="winnersWrapper">
@@ -52,9 +52,7 @@
                 <textarea name="winners" id="insertedItemsArea"   class="textarea disabled"  rows="20" spellcheck="false" disabled></textarea>
                 <div id="winnersSub" class="mt_1">
                     <span class="button danger" id="clear">TEMİZLE</span>
-                    
-                    <span id="drawWinnerText"><div class="button success" style="margin-top: -4px;">DRAW</div> <input type="text" id="winnerCount"> winner from <span id="itemCount" class="bolder3 larger">10</span> participants </span>
-                    
+                    <span id="drawWinnerText"><div class="button success" style="margin-top: -4px;">DRAW</div> <input type="text" id="winnerCount"> winner from <span id="itemCount" class="bolder3 larger">0</span> participants </span>
                 </div>
             </div>
         </div>

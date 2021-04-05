@@ -27,8 +27,8 @@ body{
     border: 1px solid grey;
 }
 .button{
-    border-radius: 6px;
-    padding: 4px 10px;
+    border-radius: 4px;
+    padding: 4px 8px;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
@@ -258,7 +258,6 @@ input[type=number] {
     }
     #insertedItemsArea{
         height: 225px;
-        background-color: red;
     }
 }
 #socialMedia{
