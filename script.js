@@ -52,6 +52,7 @@ if (userLang == "tr-TR" || userLang == "tr"){
 else{
     langEN();
 }
+var itemArray = [];
 function loadFileAsText(){
     var fileToLoad = document.getElementById("fileToLoad").files[0];
   
@@ -61,7 +62,6 @@ function loadFileAsText(){
         var fileName = document.getElementById("fileToLoad").files.item(0).name;    //read.txt      /read.csv 
         var fileSize = document.getElementById("fileToLoad").files.item(0).size;
         var fileType = document.getElementById("fileToLoad").files.item(0).type;    //text/plain    /application/vnd.ms-excel
-        var itemArray = [];
         if (fileType == "text/plain" || fileName.split('.').pop() == "txt"){
             document.getElementById("insertedItemsArea").innerHTML = "";
             var n = textFromFileLoaded.split("\n");
@@ -92,4 +92,26 @@ function loadFileAsText(){
         }
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
+}
+function clearItems(){
+    document.getElementById("insertedItemsArea").value = "";
+    document.getElementById("insertedItemsArea").focus();
+}
+document.getElementById("winnerCount").value = 1;
+
+function checkLines(){
+    itemArray = [];
+    var items = document.getElementById("insertedItemsArea").value;
+    var n = items.split("\n");
+    for(var x in n){  
+        if (n[x] == "\n" || n[x] == ""  || n[x] == " "){
+            continue
+        }
+        else{
+            itemArray.push((n[x].trim()));
+            document.getElementById("itemCount").innerHTML = itemArray.length;
+        } 
+    }
+    document.getElementById("itemCount").innerHTML = itemArray.length;
+
 }

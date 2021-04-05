@@ -41,14 +41,14 @@
         <div class="mt_4" id="insertedItemsAndWinners">
             <div id="insItemsWrapper" class="mr_5">
                 <div class="bolder0 mb1" id="enterSeperatedNames">Enter names separated by newlines:</div>
-                <textarea name="insItems" id="insertedItemsArea" class="textarea"  rows="20" spellcheck="false"></textarea>
+                <textarea name="insItems" id="insertedItemsArea" class="textarea" oninput="checkLines()" rows="20" spellcheck="false"></textarea>
                 <div id="insItemsSub" class="mt_1">
-                    <span class="button danger" id="clearItems">CLEAR</span>
+                    <span class="button danger" id="clearItems" onclick="clearItems()">CLEAR</span>
                         <span id="drawWinnerText" style="display: flex;">
                             <div class="button success" style="margin-top: -2px;" id="drawbuttontext">
                                 ÇEK
                             </div> 
-                            <input type="text" id="winnerCount" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  maxlength="3" spellcheck="false" autocomplete="off" title="en fazla 3 basamaklı sayılar kabul edilir"> 
+                            <input type="text" id="winnerCount" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  maxlength="3" spellcheck="false" autocomplete="off" title="min:1, max:999"> 
                             <span id="winnerfromtext" style="margin-top: 2px;">kazanan </span> 
                             <span id="itemCount" class="bolder5 larger" style="margin-top: 0px">
                                 0
