@@ -113,6 +113,12 @@ function clearItems(){
     document.getElementById("insertedItemsArea").value = "";
     document.getElementById("insertedItemsArea").focus();
 }
+function clearWinners(){
+    document.getElementById("winnersItemsArea").value = "";
+    checkLines();
+}
+
+
 document.getElementById("winnerCount").value = 1;
 
 function checkLines(){
@@ -129,4 +135,22 @@ function checkLines(){
         } 
     }
     document.getElementById("itemCount").innerHTML = itemArray.length;
+}
+
+function drawWinners(){
+    var winnerCount = document.getElementById("winnerCount").value;
+    var winners = [];
+    while(winners.length < winnerCount){
+        var winner = Math.floor(Math.random() * itemArray.length) ;
+        if(winners.indexOf(itemArray[winner]) === -1){
+            winners.push(itemArray[winner]);
+            itemArray.splice(winner, 1);
+        } 
+    }
+    // alert("item array: " + itemArray)
+    // alert("kazananlar:" + winners)
+    var n = winners;
+    for(var x in n){  
+        document.getElementById("winnersItemsArea").value += n[x] + "\n"; 
+    }
 }

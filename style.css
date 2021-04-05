@@ -258,7 +258,7 @@ input[type=number] {
         margin-bottom: 20px;
         float: initial;
     }
-    #insertedItemsArea{
+    #insertedItemsArea, #winnersItemsArea{
         height: 225px;
     }
 }
