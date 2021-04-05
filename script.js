@@ -63,24 +63,38 @@ function loadFileAsText(){
         var fileSize = document.getElementById("fileToLoad").files.item(0).size;
         var fileType = document.getElementById("fileToLoad").files.item(0).type;    //text/plain    /application/vnd.ms-excel
         if (fileType == "text/plain" || fileName.split('.').pop() == "txt"){
-            document.getElementById("insertedItemsArea").innerHTML = "";
+            document.getElementById("insertedItemsArea").value = "";
             var n = textFromFileLoaded.split("\n");
-                for(var x in n){   
+            itemArray = [];
+            for(var x in n){   
+                if (n[x] == "\n" || n[x] == ""  || n[x] == " " || n[x] == "\r"){
+                    continue
+                }
+                else{
                     itemArray.push((n[x].trim()));
+                    document.getElementById("itemCount").innerHTML = itemArray.length;
+                } 
             }
             for (var i = 0; i< itemArray.length; i++){
-                document.getElementById("insertedItemsArea").innerHTML += itemArray[i] + "\n";
+                document.getElementById("insertedItemsArea").value += itemArray[i] + "\n";
             }
             document.getElementById("itemCount").innerHTML = itemArray.length;
         }
         else if (fileName.split('.').pop() == "csv"){
-            document.getElementById("insertedItemsArea").innerHTML = "";
+            document.getElementById("insertedItemsArea").value = "";
             var n = textFromFileLoaded.split(",");
-                for(var x in n){   
+            itemArray = [];
+            for(var x in n){   
+                if (n[x] == "\n" || n[x] == ""  || n[x] == " " || n[x] == "\r"){
+                    continue
+                }
+                else{
                     itemArray.push((n[x].trim()));
+                    document.getElementById("itemCount").innerHTML = itemArray.length;
+                } 
             }
             for (var i = 0; i< itemArray.length; i++){
-                document.getElementById("insertedItemsArea").innerHTML += itemArray[i] + "\n";
+                document.getElementById("insertedItemsArea").value += itemArray[i] + "\n";
             }
             document.getElementById("itemCount").innerHTML = itemArray.length;
         }
@@ -94,6 +108,8 @@ function loadFileAsText(){
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
 function clearItems(){
+    itemArray = [];
+    document.getElementById("itemCount").innerHTML = itemArray.length;
     document.getElementById("insertedItemsArea").value = "";
     document.getElementById("insertedItemsArea").focus();
 }
@@ -113,5 +129,4 @@ function checkLines(){
         } 
     }
     document.getElementById("itemCount").innerHTML = itemArray.length;
-
 }
