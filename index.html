@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my Raffle</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="google" content="notranslate" />
 </head>
 <body>
 
@@ -23,22 +24,22 @@
                 <div class="button normal">SELECT FILE</div>
             </div>
         </div>
-        <div class="mt_3" id="insertedItemsAndWinners">
+        <div class="mt_4" id="insertedItemsAndWinners">
             <div id="insItemsWrapper" class="mr_5">
-                <div>Enter names separated by newlines:</div>
+                <div class="bolder0 mb1">Enter names separated by newlines:</div>
                 <textarea name="insItems" id="insertedItemsArea" class="textarea"  rows="20" spellcheck="false"></textarea>
                 <div id="insItemsSub" class="mt_1">
                     <span class="button danger" id="clear">TEMİZLE</span>
-                    <span id="drawWinnerText"> <span id="itemCount">10</span> katılımcı arasından <input type="text" id="winnerCount"> kazanan <div class="button success" style="margin-top: -4px;">ÇEK</div></span>
+                    <span id="drawWinnerText"> <span id="itemCount" class="bolder3 larger">10</span> katılımcı arasından <input type="text" id="winnerCount"> kazanan <div class="button success" style="margin-top: -4px;">ÇEK</div></span>
                 </div>
             </div>
             <div id="winnersWrapper">
-                <div>Winners</div>
+                <div class="bolder0 mb1">Winners</div>
                 <textarea name="winners" id="insertedItemsArea"   class="textarea"  rows="20" spellcheck="false" disabled></textarea>
                 <div id="winnersSub" class="mt_1">
                     <span class="button danger" id="clear">TEMİZLE</span>
                     
-                    <span id="drawWinnerText"><div class="button success" style="margin-top: -4px;">DRAW</div> <input type="text" id="winnerCount"> winner from <span id="itemCount">10</span> participants </span>
+                    <span id="drawWinnerText"><div class="button success" style="margin-top: -4px;">DRAW</div> <input type="text" id="winnerCount"> winner from <span id="itemCount" class="bolder3 larger">10</span> participants </span>
                     
                 </div>
             </div>
