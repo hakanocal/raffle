@@ -1,7 +1,8 @@
 document.getElementById("insertedItemsArea").placeholder = "Donald Trump\nAngela Merkel\nVladimir Putin\nRecep Tayyip Erdoğan\nEmmanuel Macron\nNicolás Maduro\nPapa Franciscus\nKim Jong-un\nBenyamin Netanyahu\nRam Nath Kovind\nBoris Johnson";
 document.getElementById("winnerCount").innerHTML = "1"
 
-
+var copied;
+var _copy;
 function langTR(){
     document.getElementById("drawbuttontext").style.order = "5";
     document.getElementById("winnerCount").style.order = "3";
@@ -20,7 +21,12 @@ function langTR(){
     document.getElementById("winners").innerHTML = "Kazananlar:";
     document.getElementById("headerTitle").innerHTML = "YENİ BİR ÇEKİLİŞ OLUŞTUR!";
     document.getElementById("dropyourfile").innerHTML = ".txt veya .csv formatlı dosyaları sürükle ve bırak";
+    document.getElementById("copyWinners").innerHTML = "KOPYALA";
+    _copy = "KOPYALA";
+    copied = "KOPYALANDI";
+
 }
+
 function langEN(){
     document.getElementById("drawbuttontext").style.order = "1";
     document.getElementById("winnerCount").style.order = "2";
@@ -44,6 +50,9 @@ function langEN(){
     document.getElementById("winners").innerHTML = "Winners";
     document.getElementById("headerTitle").innerHTML = "CREATE NEW RAFFLE NOW!";
     document.getElementById("dropyourfile").innerHTML = "Drop your .txt or .csv files here";
+    document.getElementById("copyWinners").innerHTML = "COPY";
+    _copy = "COPY";
+    copied = "COPIED";
 }
 var userLang = navigator.language || navigator.userLanguage; 
 if (userLang == "tr-TR" || userLang == "tr"){
@@ -152,5 +161,27 @@ function drawWinners(){
     var n = winners;
     for(var x in n){  
         document.getElementById("winnersItemsArea").value += n[x] + "\n"; 
+    }
+}
+var myVar;
+var kopyala = true;
+function copy(){
+    if (kopyala){
+        kopyala = false;
+        var copyText = document.getElementById("winnersItemsArea");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        document.getElementById("copyWinners").innerHTML = copied;
+        if (window.getSelection) {window.getSelection().removeAllRanges();}
+        else if (document.selection) {document.selection.empty();}
+        myVar = setTimeout(sil, 1000);
+        function sil(){
+            document.getElementById("copyWinners").innerHTML = _copy;
+            kopyala = true;
+        }
+    }
+    else{
+
     }
 }

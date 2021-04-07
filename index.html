@@ -35,7 +35,7 @@
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
                 <div id="dropyourfile">Drop your .txt or .csv files here</div>
-                <input type="file" accept=".txt, .csv" class="button normal" id="fileToLoad" onchange="loadFileAsText()">
+                <input type="file" accept=".txt, .csv" class="button normal" id="" onchange="loadFileAsText()">
             </div>
         </div>
         <div class="mt_4" id="insertedItemsAndWinners">
@@ -45,7 +45,7 @@
                 <div id="insItemsSub" class="mt_1">
                     <span class="button danger" id="clearItems" onclick="clearItems()">CLEAR</span>
                     <span id="drawWinnerText" style="display: flex;">
-                        <div class="button success" style="margin-top: -2px;" id="drawbuttontext" onclick="drawWinners()">
+                        <div class="button primary" style="margin-top: -2px;" id="drawbuttontext" onclick="drawWinners()">
                             ÇEK
                         </div> 
                         <input type="text" id="winnerCount" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  maxlength="3" spellcheck="false" autocomplete="off" title="min:1, max:999"> 
@@ -59,9 +59,12 @@
             </div>
             <div id="winnersWrapper">
                 <div class="bolder0 mb1" id="winners">Winners:</div>
-                <textarea name="winners" id="winnersItemsArea"   class="textarea disabled"  rows="20" spellcheck="false" disabled></textarea>
+                <textarea name="winners" class="textarea disabled" id="winnersItemsArea"  rows="20" spellcheck="false" readonly></textarea>
                 <div id="winnersSub" class="mt_1">
                     <span class="button danger" id="clearWinners" onclick="clearWinners()">CLEAR</span>
+                    <div class="button primary-outline" style=" float:right;" id="copyWinners" onclick="copy()">
+                        COPY
+                    </div> 
                 </div>
             </div>
         </div>
