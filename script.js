@@ -189,7 +189,10 @@ function copy(){
 function checkWinnnersDrawCount(){
     document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/[^0-9.]/g, ''); 
     document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/(\..*)\./g, '$1');
-    if (document.getElementById("itemCount").innerHTML < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == ""){
+    console.log(document.getElementById("itemCount").innerHTML);
+    console.log(document.getElementById("winnerCount").value);
+    console.log("******")
+    if (parseInt(document.getElementById("itemCount").innerHTML) < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == ""){
         document.getElementById("winnerCount").style.borderColor = "red";
         document.getElementById("winnerCount").style.color = "red";
         document.getElementById("drawbuttontext").disabled = true;
