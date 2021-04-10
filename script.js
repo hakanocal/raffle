@@ -71,6 +71,7 @@ function loadFileAsText(){
         var fileName = document.getElementById("fileToLoad").files.item(0).name;    //read.txt      /read.csv 
         var fileSize = document.getElementById("fileToLoad").files.item(0).size;
         var fileType = document.getElementById("fileToLoad").files.item(0).type;    //text/plain    /application/vnd.ms-excel
+        console.log(fileName + fileSize + fileType)
         if (fileType == "text/plain" || fileName.split('.').pop() == "txt"){
             document.getElementById("insertedItemsArea").value = "";
             var n = textFromFileLoaded.split("\n");
@@ -183,5 +184,20 @@ function copy(){
     }
     else{
 
+    }
+}
+function checkWinnnersDrawCount(){
+    document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/[^0-9.]/g, ''); 
+    document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/(\..*)\./g, '$1');
+    if (document.getElementById("itemCount").innerHTML < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == ""){
+        document.getElementById("winnerCount").style.borderColor = "red";
+        document.getElementById("winnerCount").style.color = "red";
+        document.getElementById("drawbuttontext").disabled = true;
+        
+    }
+    else{
+        document.getElementById("winnerCount").style.borderColor = "grey";
+        document.getElementById("winnerCount").style.color = "black";
+        document.getElementById("drawbuttontext").disabled = false;
     }
 }

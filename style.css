@@ -36,6 +36,7 @@ body{
     font-weight: 500;
     font-size: 12px;
     overflow-wrap: break-word;
+    outline: none;
 }
 .success{
     background-color: #2c974b;
@@ -310,7 +311,14 @@ input[type=number] {
     border:1px solid grey;
     outline: none;
 }
-
+#drawbuttontext:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+#drawbuttontext:enabled {
+    opacity: 1;
+    cursor: pointer;
+}
 
 
 

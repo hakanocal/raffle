@@ -9,7 +9,7 @@
     <meta name="google" content="notranslate" />
     <link rel="icon" type="image/png" href="images/favicon.png"/>
 </head>
-<body>
+<body onload="checkWinnnersDrawCount()">
 
     <div id="headerWrapper">
         <div class="container">
@@ -35,20 +35,22 @@
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
                 <div id="dropyourfile">Drop your .txt or .csv files here</div>
-                <input type="file" accept=".txt, .csv" class="button normal" id="" onchange="loadFileAsText()">
+                <input type="file" accept=".txt, .csv" class="button normal" id="fileToLoad" onchange="loadFileAsText()">
             </div>
         </div>
         <div class="mt_4" id="insertedItemsAndWinners">
             <div id="insItemsWrapper" class="mr_5">
                 <div class="bolder0 mb1" id="enterSeperatedNames">Enter names separated by newlines:</div>
-                <textarea name="insItems" id="insertedItemsArea" class="textarea" oninput="checkLines()" rows="20" spellcheck="false"></textarea>
+                <!-- İSİMLERİ GİRİNİZ -->
+                <textarea name="insItems" id="insertedItemsArea" class="textarea" oninput="checkLines(); checkWinnnersDrawCount();" rows="20" spellcheck="false"></textarea>
                 <div id="insItemsSub" class="mt_1">
                     <span class="button danger" id="clearItems" onclick="clearItems()">CLEAR</span>
                     <span id="drawWinnerText" style="display: flex;">
-                        <div class="button primary" style="margin-top: -2px;" id="drawbuttontext" onclick="drawWinners()">
+                        <button class="button primary" style="margin-top: -2px;" id="drawbuttontext" onclick="drawWinners()">
                             ÇEK
-                        </div> 
-                        <input type="text" id="winnerCount" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  maxlength="3" spellcheck="false" autocomplete="off" title="min:1, max:999"> 
+                        </button> 
+                        
+                        <input type="text" id="winnerCount" oninput="checkWinnnersDrawCount()"  maxlength="3" spellcheck="false" autocomplete="off" title="min:1, max:999"> 
                         <span id="winnerfromtext" style="margin-top: 2px;">kazanan </span> 
                         <span id="itemCount" class="bolder5 larger" style="margin-top: 0px">
                             0
@@ -57,6 +59,7 @@
                     </span>
                 </div>
             </div>
+            <!-- KAZANANLAR -->
             <div id="winnersWrapper">
                 <div class="bolder0 mb1" id="winners">Winners:</div>
                 <textarea name="winners" class="textarea disabled" id="winnersItemsArea"  rows="20" spellcheck="false" readonly></textarea>
