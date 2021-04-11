@@ -92,10 +92,50 @@ body{
 #dragNdropWrapper{
 }
 #dragNdrop{
-    border:2px dashed grey;
+    position: relative;
+    border: 2px dashed grey;
+    padding: 10px 0px;
     text-align: center;
-    min-height: 75px;
 }
+
+#dragNdrop:hover{
+    opacity:0.8;
+}
+#dragNdrop div{
+    color: grey;
+    font-family: Arial;
+}
+
+#labelInput{
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity:1;
+    cursor:pointer;
+}
+
+.icon{
+    font-size: 26px;
+    color: grey;
+    text-align: center;
+}
+#fileUploadWrapper{
+    margin-top: 5px; 
+    text-align:center;
+}
+#fileToLoad{
+    outline: none;
+    cursor: default;
+}
+
+
+
+
 .bg_grey{
     background-color: #F0F2F5;
 

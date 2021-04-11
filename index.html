@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <meta name="google" content="notranslate" />
     <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 </head>
 <body onload="checkWinnnersDrawCount()">
 
@@ -34,8 +36,12 @@
     <div class="container bg_grey" style="min-height: calc(100vh - 61px);">
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <label for="fileToLoad" id="labelInput">
+                <i class="fa fa-cloud-upload"></i> 
+                </label>
                 <div id="dropyourfile">Drop your .txt or .csv files here</div>
-                <input type="file" accept=".txt, .csv" class="button normal" id="fileToLoad" onchange="loadFileAsText()">
+                <div id="fileUploadWrapper"><input id="fileToLoad" accept=".txt, .csv" class="button normal" onchange="loadFileAsText(); checkWinnnersDrawCount();"  type="file"></div>
             </div>
         </div>
         <div class="mt_4" id="insertedItemsAndWinners">

@@ -114,6 +114,8 @@ function loadFileAsText(){
         else{
             alert('dosya türünü kontrol edin')
         }
+        checkWinnnersDrawCount();
+
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
