@@ -180,9 +180,14 @@ function copy(){
         if (window.getSelection) {window.getSelection().removeAllRanges();}
         else if (document.selection) {document.selection.empty();}
         myVar = setTimeout(sil, 1000);
+        document.getElementById("copyWinners").style.backgroundColor = "#0366d6";
+        document.getElementById("copyWinners").style.color = "#fff";
         function sil(){
             document.getElementById("copyWinners").innerHTML = _copy;
             kopyala = true;
+            document.getElementById("copyWinners").style.backgroundColor = "#fafbfc";
+            document.getElementById("copyWinners").style.color = "#0366d6";
+            
         }
     }
     else{
