@@ -156,6 +156,9 @@ function drawWinners(){
             winners.push(itemArray[winner]);
             itemArray.splice(winner, 1);
         } 
+        else{
+            continue;
+        }
     }
     // alert("item array: " + itemArray)
     // alert("kazananlar:" + winners)
@@ -189,10 +192,7 @@ function copy(){
 function checkWinnnersDrawCount(){
     document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/[^0-9.]/g, ''); 
     document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/(\..*)\./g, '$1');
-    console.log(document.getElementById("itemCount").innerHTML);
-    console.log(document.getElementById("winnerCount").value);
-    console.log("******")
-    if (parseInt(document.getElementById("itemCount").innerHTML) < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == ""){
+    if (parseInt(document.getElementById("itemCount").innerHTML) < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == "" || document.getElementById("winnerCount").value == 0){
         document.getElementById("winnerCount").style.borderColor = "red";
         document.getElementById("winnerCount").style.color = "red";
         document.getElementById("drawbuttontext").disabled = true;
@@ -204,3 +204,111 @@ function checkWinnnersDrawCount(){
         document.getElementById("drawbuttontext").disabled = false;
     }
 }
+
+
+
+
+
+// <!DOCTYPE html>
+// <html ondragstart="dragStart()" ondragend="dragStop()">
+// <head>
+// <style>
+// #drop{
+// width:200px;
+// height:50px;
+// border:1px dashed grey;
+// }
+
+// @keyframes dragdrop{
+// 	from{
+// 		transform: scale(1);					
+// 	}
+// 	to{
+// 		transform: scale(1.05);					
+// 	}
+// }
+
+// </style>
+
+// </head>
+// <body>
+
+// <script>
+// function dragStart(){
+// 	console.log("Sürükleniyor ")
+//     document.getElementById('drop').style.animation="dragdrop 0.6s linear 0s infinite alternate none running";
+// }
+// function dragStop(){
+// 	document.getElementById("drop").style.animation = 'none';
+//   	console.log("niye bıraktın olm")
+// }
+// function dragEnter(){
+// 	console.log("enter oldu")
+// }
+// function onDrop(ev){
+//   console.log('File(s) dropped');
+//   ev.preventDefault();
+//   if (ev.dataTransfer.items) {
+//     // Use DataTransferItemList interface to access the file(s)
+//     for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+//       // If dropped items aren't files, reject them
+//       if (ev.dataTransfer.items[i].kind === 'file') {
+//         var file = ev.dataTransfer.items[i].getAsFile();
+//         console.log('... file[' + i + '].name = ' + file.name);
+//       }
+//     }
+//   } else {
+//     // Use DataTransfer interface to access the file(s)
+//     for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+//       console.log('... file[' + i + '].name = ' + 						             ev.dataTransfer.files[i].name);
+//     }
+//   }
+
+// }
+// function Prevent(event){
+// 	event.preventDefault();	
+// }
+
+// </script>
+
+
+// <div id="drop" ondragenter="dragEnter()" ondrop="onDrop(event)" ondragover="Prevent(event)" > </div>
+// <br>
+// <div draggable="true"  >Javascript Eğitim Seti</div>
+
+
+// </body>
+// </html>
+
+
+
+/* -------------------------------------------------- */
+
+
+
+// <!DOCTYPE html>
+// <html id="drop-zone">
+// <body >
+
+// <h1 id="myH"></h1>
+// <p id="myP"></p>
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+// <script>
+// $(document).on('dragenter', '#drop-zone', function(ev) {
+//   $(ev.target).html("ANİMASYON VAR");
+// });
+
+// $(document).on('dragleave', '#drop-zone', function(ev) {
+//   $(ev.target).html('SÜRÜKLE KARDEŞİM ANİMASYON YOK');
+// });
+
+// $(document).on('dragstop', '#drop-zone', function(ev) {
+//   $(ev.target).html("STOP ETTİM");
+// });
+// </script>
+
+// <div >SÜRÜKLE KARDEŞİM ANİMASYON YOK</div>
+
+// </body>
+// </html>
+
