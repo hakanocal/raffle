@@ -43,17 +43,9 @@ body{
     border: 1px solid #298545;
     color:#fff;
 }
-.success:hover{
-    background-color: #2ea44f;
-    border-color: rgba(27, 31, 35, 0.15);
-}
+
 .normal{
     background-color: #fafbfc;
-    border:1px solid rgba(27, 31, 35, 0.15);
-    color: #24292e;
-}
-.normal:hover{
-    background-color: #f3f4f6;
     border:1px solid rgba(27, 31, 35, 0.15);
     color: #24292e;
 }
@@ -63,11 +55,7 @@ body{
     border:1px solid rgba(27, 31, 35, 0.15);
     color:#d73a49;
 }
-.danger:hover{
-    color:#fff;
-    background-color: #cb2431;
-    border:1px solid rgba(27, 31, 35, 0.15);
-}
+
 .primary{
     background-color:#0366d6;
     color:#fff;
@@ -81,14 +69,36 @@ body{
     border:1px solid rgba(27, 31, 35, 0.15);
     background-color: #fafbfc;
 }
-.primary-outline:hover{
-    background-color:#0366d6;
-    color:#fff;
-    border:1px solid rgba(27, 31, 35, 0.15);
-}
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@media (hover: hover) {
+    .primary-outline:hover{
+        background-color:#0366d6!important;
+        color:#fff!important;
+        border:1px solid rgba(27, 31, 35, 0.15);
+    }
+}
+@media (hover: hover) {
+    .danger:hover{
+        color:#fff;
+        background-color: #cb2431;
+        border:1px solid rgba(27, 31, 35, 0.15);
+    }
+}
+@media (hover: hover) {
+    .normal:hover{
+        background-color: #f3f4f6;
+        border:1px solid rgba(27, 31, 35, 0.15);
+        color: #24292e;
+    }
+}
+@media (hover: hover) {
+    .success:hover{
+        background-color: #2ea44f;
+        border-color: rgba(27, 31, 35, 0.15);
+    }
+}
 #dragNdropWrapper{
 }
 #dragNdrop{
@@ -300,6 +310,8 @@ input[type=number] {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+
+
 @media screen and (max-width: 850px) {
     #insItemsWrapper{
         width: 330px;
@@ -323,6 +335,10 @@ input[type=number] {
         height: 225px;
     }
 }
+
+
+
+
 #socialMedia{
     float:right;
 }

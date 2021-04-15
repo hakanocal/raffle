@@ -123,7 +123,6 @@ function clearItems(){
     itemArray = [];
     document.getElementById("itemCount").innerHTML = itemArray.length;
     document.getElementById("insertedItemsArea").value = "";
-    document.getElementById("insertedItemsArea").focus();
 }
 function clearWinners(){
     document.getElementById("winnersItemsArea").value = "";
