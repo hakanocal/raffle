@@ -189,7 +189,6 @@ function copy(){
             kopyala = true;
             document.getElementById("copyWinners").style.backgroundColor = "#fafbfc";
             document.getElementById("copyWinners").style.color = "#0366d6";
-            
         }
     }
     else{
