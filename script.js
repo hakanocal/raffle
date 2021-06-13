@@ -195,7 +195,7 @@ function copy(){
     }
 }
 function checkWinnnersDrawCount(){
-    document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/[^0-9.]/g, ''); 
+    document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/[^0-9]/g, ''); 
     document.getElementById("winnerCount").value = document.getElementById("winnerCount").value.replace(/(\..*)\./g, '$1');
     if (parseInt(document.getElementById("itemCount").innerHTML) < document.getElementById("winnerCount").value || document.getElementById("winnerCount").value == "" || document.getElementById("winnerCount").value == 0){
         document.getElementById("winnerCount").style.borderColor = "red";
