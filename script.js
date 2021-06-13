@@ -63,6 +63,9 @@ else{
 }
 var itemArray = [];
 function loadFileAsText(){
+    //print file name
+    var x = document.getElementById('fileToLoad')
+    document.getElementById('droppedFileName').innerHTML = x.value.split('\\').pop()
     var fileToLoad = document.getElementById("fileToLoad").files[0];
   
     var fileReader = new FileReader();

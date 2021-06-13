@@ -36,11 +36,12 @@
     <div class="container bg_grey" style="min-height: calc(100vh - 61px);">
         <div id="dragNdropWrapper">
             <div id="dragNdrop">
+                <div id="fileUploadWrapper"> 
+                    <input id="fileToLoad" accept=".txt, .csv" class="button normal" onchange="loadFileAsText(); checkWinnnersDrawCount();"  type="file">      
+                </div>
                 <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                <label for="fileToLoad" id="labelInput">
-                </label>
                 <div id="dropyourfile">Drop your .txt or .csv files here</div>
-                <div id="fileUploadWrapper"><input id="fileToLoad" accept=".txt, .csv" class="button normal" onchange="loadFileAsText(); checkWinnnersDrawCount();"  type="file"></div>
+                <div style="margin-top: 5px;">  <span class="button primary">DOSYA SEÇ</span> <span id="droppedFileName"></span></div> 
             </div>
         </div>
         <div class="mt_4" id="insertedItemsAndWinners">
