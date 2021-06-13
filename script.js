@@ -1,4 +1,4 @@
-document.getElementById("insertedItemsArea").placeholder = "Donald Trump\nAngela Merkel\nVladimir Putin\nRecep Tayyip Erdoğan\nEmmanuel Macron\nNicolás Maduro\nPapa Franciscus\nKim Jong-un\nBenyamin Netanyahu\nRam Nath Kovind\nBoris Johnson";
+document.getElementById("insertedItemsArea").placeholder = "Mehmet\nDaniel\nElena\nJakub\nLucas\nJack\nErik\nOliver\nRobert\nAmina\nDonald\nGiulia\nMaria";
 document.getElementById("winnerCount").innerHTML = "1"
 
 var copied;
@@ -22,9 +22,9 @@ function langTR(){
     document.getElementById("headerTitle").innerHTML = "YENİ BİR ÇEKİLİŞ OLUŞTUR!";
     document.getElementById("dropyourfile").innerHTML = ".txt veya .csv formatlı dosyaları sürükle ve bırak";
     document.getElementById("copyWinners").innerHTML = "KOPYALA";
+    document.getElementById("selectFile").innerHTML = "Dosya Seç";
     _copy = "KOPYALA";
     copied = "KOPYALANDI";
-
 }
 
 function langEN(){
@@ -51,6 +51,8 @@ function langEN(){
     document.getElementById("headerTitle").innerHTML = "CREATE NEW RAFFLE NOW!";
     document.getElementById("dropyourfile").innerHTML = "Drop your .txt or .csv files here";
     document.getElementById("copyWinners").innerHTML = "COPY";
+    document.getElementById("selectFile").innerHTML = "Choose File";
+
     _copy = "COPY";
     copied = "COPIED";
 }
@@ -161,8 +163,6 @@ function drawWinners(){
         winners.push(itemArray[winner]);
         itemArray.splice(winner, 1);
     }
-    // alert("item array: " + itemArray)
-    // alert("kazananlar:" + winners)
     var n = winners;
     for(var x in n){  
         document.getElementById("winnersItemsArea").value += n[x] + "\n"; 
@@ -209,111 +209,3 @@ function checkWinnnersDrawCount(){
         document.getElementById("drawbuttontext").disabled = false;
     }
 }
-
-
-
-
-
-// <!DOCTYPE html>
-// <html ondragstart="dragStart()" ondragend="dragStop()">
-// <head>
-// <style>
-// #drop{
-// width:200px;
-// height:50px;
-// border:1px dashed grey;
-// }
-
-// @keyframes dragdrop{
-// 	from{
-// 		transform: scale(1);					
-// 	}
-// 	to{
-// 		transform: scale(1.05);					
-// 	}
-// }
-
-// </style>
-
-// </head>
-// <body>
-
-// <script>
-// function dragStart(){
-// 	console.log("Sürükleniyor ")
-//     document.getElementById('drop').style.animation="dragdrop 0.6s linear 0s infinite alternate none running";
-// }
-// function dragStop(){
-// 	document.getElementById("drop").style.animation = 'none';
-//   	console.log("niye bıraktın olm")
-// }
-// function dragEnter(){
-// 	console.log("enter oldu")
-// }
-// function onDrop(ev){
-//   console.log('File(s) dropped');
-//   ev.preventDefault();
-//   if (ev.dataTransfer.items) {
-//     // Use DataTransferItemList interface to access the file(s)
-//     for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-//       // If dropped items aren't files, reject them
-//       if (ev.dataTransfer.items[i].kind === 'file') {
-//         var file = ev.dataTransfer.items[i].getAsFile();
-//         console.log('... file[' + i + '].name = ' + file.name);
-//       }
-//     }
-//   } else {
-//     // Use DataTransfer interface to access the file(s)
-//     for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-//       console.log('... file[' + i + '].name = ' + 						             ev.dataTransfer.files[i].name);
-//     }
-//   }
-
-// }
-// function Prevent(event){
-// 	event.preventDefault();	
-// }
-
-// </script>
-
-
-// <div id="drop" ondragenter="dragEnter()" ondrop="onDrop(event)" ondragover="Prevent(event)" > </div>
-// <br>
-// <div draggable="true"  >Javascript Eğitim Seti</div>
-
-
-// </body>
-// </html>
-
-
-
-/* -------------------------------------------------- */
-
-
-
-// <!DOCTYPE html>
-// <html id="drop-zone">
-// <body >
-
-// <h1 id="myH"></h1>
-// <p id="myP"></p>
-// <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-// <script>
-// $(document).on('dragenter', '#drop-zone', function(ev) {
-//   $(ev.target).html("ANİMASYON VAR");
-// });
-
-// $(document).on('dragleave', '#drop-zone', function(ev) {
-//   $(ev.target).html('SÜRÜKLE KARDEŞİM ANİMASYON YOK');
-// });
-
-// $(document).on('dragstop', '#drop-zone', function(ev) {
-//   $(ev.target).html("STOP ETTİM");
-// });
-// </script>
-
-// <div >SÜRÜKLE KARDEŞİM ANİMASYON YOK</div>
-
-// </body>
-// </html>
-
